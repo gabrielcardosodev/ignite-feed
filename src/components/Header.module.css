@@ -1,13 +1,17 @@
 .header {
-  background-color: #202024;
+  background-color: var(--gray-800);
   height: 6.25rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
-.strong {
-  font-size: 1.625rem;
-  font-family: 'Roboto';
+.header img {
+  height: 45px;
 }
+
+.header strong {
+  font-size: 1.625rem;
+}
+
