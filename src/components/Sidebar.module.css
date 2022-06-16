@@ -18,13 +18,18 @@
 }
 
 .profile img {
-  position: relative;
-  top: -30px;
+  margin: -40px auto 0;
+
   width: 60px;
   height: 60px;
 
-  border: 2px solid var(--blue-500);
-  border-radius: 50%;
+  border: 3px solid var(--blue-500);
+  border-radius: 5px;
+}
+
+.profile strong {
+  margin-top: 1rem;
+  line-height: 1.6rem;
 }
 
 .profile span {
