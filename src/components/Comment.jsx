@@ -1,13 +1,15 @@
-import styles from './Comment.module.css'
-
-import profilePic1 from '../assets/images/profile-pic-1.png'
+import { Avatar } from './Avatar'
 
 import { ThumbsUp, Trash } from 'phosphor-react'
+import profilePic1 from '../assets/images/profile-pic-1.png'
+
+import styles from './Comment.module.css'
+
 
 export function Comment() {
   return (
     <div className={styles.comment}>
-      <img src={profilePic1} />
+      <Avatar hasBorder={false} src={profilePic1} />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
@@ -22,7 +24,7 @@ export function Comment() {
             </button>
           </header>
 
-          <p>Muito bom Devon, parabéns!! 👏👏</p>
+          <p>Show demais, irmão. Parabéns!! 👏👏</p>
         </div>
 
         <footer>

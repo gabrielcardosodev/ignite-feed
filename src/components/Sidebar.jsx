@@ -4,6 +4,7 @@ import profilePic1 from '../assets/images/profile-pic-1.png'
 import coverImg from '../assets/images/cover.png'
 
 import { PencilSimpleLine } from 'phosphor-react'
+import { Avatar } from './Avatar'
 
 export function Sidebar() {
   return (
@@ -11,7 +12,7 @@ export function Sidebar() {
       <img className={styles.cover} src={coverImg} />
 
       <div className={styles.profile}>
-        <img src={profilePic1} />
+        <Avatar hasBorder src={profilePic1} />
 
         <strong>
           Gabriel Cardoso
