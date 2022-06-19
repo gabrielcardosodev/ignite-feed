@@ -23,7 +23,9 @@
   color: var(--blue-500);
   text-decoration: none;
 
-  transition: filter .2s
+  transition: filter .2s;
+
+  cursor: pointer;
 }
 
 .content a:hover {
