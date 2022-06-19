@@ -6,7 +6,7 @@ import profilePic1 from '../assets/images/profile-pic-1.png'
 import styles from './Comment.module.css'
 
 
-export function Comment() {
+export function Comment({ content }) {
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src={profilePic1} />
@@ -24,7 +24,7 @@ export function Comment() {
             </button>
           </header>
 
-          <p>Show demais, irmão. Parabéns!! 👏👏</p>
+          <p>{content}</p>
         </div>
 
         <footer>
