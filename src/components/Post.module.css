@@ -123,8 +123,13 @@
   transition: filter .2s;
 }
 
-.commentForm button[type=submit]:hover {
+.commentForm button[type=submit]:not(:disabled):hover {
   filter: brightness(1.2);
+}
+
+.commentForm button[type=submit]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .commentList {

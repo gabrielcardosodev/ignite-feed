@@ -8,11 +8,6 @@ import { Comment } from './Comment'
 
 import styles from './Post.module.css'
 
-const comments = [
-  1,
-  2,
-]
-
 export function Post({ author, content, publishedAt }) {
   const [ comments, setComments ] = useState([
    'Post muito legal, ein?'
@@ -36,7 +31,12 @@ export function Post({ author, content, publishedAt }) {
   }
 
   function handleNewCommentChange(e) {
+    e.target.setCustomValidity('')
     setNewCommentText(e.target.value)
+  }
+
+  function handleNewCommentInvalid(e) {
+    e.target.setCustomValidity('Esse campo é obrigatório')
   }
 
   function deleteComment(commentToDelete) {
@@ -85,10 +85,12 @@ export function Post({ author, content, publishedAt }) {
       onChange={handleNewCommentChange} 
       value={newCommentText} 
       placeholder='Deixe um comentário'
+      onInvalid={handleNewCommentInvalid}
+      required
       />
 
       <footer>
-        <button type='submit'>Publicar</button>
+        <button type='submit' disabled={newCommentText.length === 0}>Publicar</button>
       </footer>
     </form>
 
