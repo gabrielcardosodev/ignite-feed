@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/esm/locale/pt-BR'
@@ -8,7 +8,24 @@ import { Comment } from './Comment'
 
 import styles from './Post.module.css'
 
-export function Post({ author, content, publishedAt }) {
+interface Author {
+  name: string;
+  role: string;
+  avatarUrl: string;
+}
+
+interface Content {
+  type: "paragraph" | "link";
+  content: string;
+}
+
+export interface PostProps {
+  author: Author;
+  content: Content[];
+  publishedAt: Date;
+}
+
+export function Post({ author, content, publishedAt }: PostProps) {
   const [ comments, setComments ] = useState([
    'Post muito legal, ein?'
   ])
@@ -23,23 +40,23 @@ export function Post({ author, content, publishedAt }) {
     addSuffix: true
   })
 
-  function handleCreateNewComment(e) {
+  function handleCreateNewComment(e: FormEvent) {
     e.preventDefault()
     
     setComments([...comments, newCommentText])
     setNewCommentText('')
   }
 
-  function handleNewCommentChange(e) {
+  function handleNewCommentChange(e: ChangeEvent<HTMLTextAreaElement>) {
     e.target.setCustomValidity('')
     setNewCommentText(e.target.value)
   }
 
-  function handleNewCommentInvalid(e) {
+  function handleNewCommentInvalid(e: InvalidEvent<HTMLTextAreaElement>) {
     e.target.setCustomValidity('Esse campo é obrigatório')
   }
 
-  function deleteComment(commentToDelete) {
+  function deleteComment(commentToDelete: string) {
     const commentsWithoutDeleteOne = comments.filter(comment => {
       return comment !== commentToDelete
     })

@@ -7,8 +7,12 @@ import profilePic1 from '../assets/images/profile-pic-1.png'
 
 import styles from './Comment.module.css'
 
+interface CommentProps {
+  content: string,
+  onDeleteComment: (content: string) => void
+}
 
-export function Comment({ content, onDeleteComment }) {
+export function Comment({ content, onDeleteComment }: CommentProps) {
   const [ likeCount, setLikeCount ] = useState(0)
 
   function handleDeleteComment() {

@@ -1,10 +1,10 @@
-import styles from './Sidebar.module.css'
+import { Avatar } from './Avatar'
 
+import { PencilSimpleLine } from 'phosphor-react'
 import profilePic1 from '../assets/images/profile-pic-1.png'
 import coverImg from '../assets/images/cover.png'
 
-import { PencilSimpleLine } from 'phosphor-react'
-import { Avatar } from './Avatar'
+import styles from './Sidebar.module.css'
 
 export function Sidebar() {
   return (
